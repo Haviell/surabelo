@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Su Rabelo - Beleza e Bem-Estar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d4af9a;
+            --secondary-color: #8a6a5c;
+            --accent-color: #c49a6c;
+            --dark-color: #3a2c28;
+            --light-color: #f9f5f2;
+            --text-color: #333333;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 154, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 154, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
+        .logo-icon {
+            background: var(--gradient);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu li::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu li:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(58, 44, 40, 0.85), rgba(58, 44, 40, 0.9)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af9a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 1.8rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Services */
+        .services {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img-container {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .service-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-content p {
+            margin-bottom: 25px;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        .service-icon {
+            background: var(--gradient);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Combos */
+        .combos {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .combos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .combos .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .combos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .combo-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 154, 0.2);
+        }
+
+        .combo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .combo-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(212, 175, 154, 0.3);
+        }
+
+        .combo-img-container {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .combo-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .combo-card:hover .combo-img {
+            transform: scale(1.05);
+        }
+
+        .combo-content {
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .combo-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .combo-price {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .combo-price span {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            text-decoration: line-through;
+            margin-left: 15px;
+            opacity: 0.7;
+        }
+
+        .combo-features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .combo-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .combo-features i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            background-color: white;
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(58, 44, 40, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: white;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-text {
+            transform: translateY(0);
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: top;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .faq .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border-left: 4px solid transparent;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Booking */
+        .booking {
+            background: linear-gradient(rgba(58, 44, 40, 0.85), rgba(58, 44, 40, 0.9)), url('https://images.unsplash.com/photo-1605496036006-fa36378ca4ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .booking h2 {
+            color: white;
+        }
+
+        .booking-form {
+            max-width: 700px;
+            margin: 50px auto 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 154, 0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 25px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer-links h3,
+        .footer-contact h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3::after,
+        .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 20px;
+            color: #ccc;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .copyright a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .copyright a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.4s;
+                box-shadow: var(--shadow);
+                padding: 30px 0;
+                z-index: 999;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 160px 0 100px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .booking-form {
+                padding: 35px 25px;
+            }
+
+            .services-grid,
+            .combos-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .service-card,
+            .combo-card {
+                max-width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-links h3::after,
+            .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-links a {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                Estética
+                <span>Su Rabelo</span>
+            </a>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#services"><i class="fas fa-spa"></i> Serviços</a></li>
+                <li><a href="#combos"><i class="fas fa-gift"></i> Combos</a></li>
+                <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li><a href="#booking" class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Agendar</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Beleza que transforma e realça sua essência</h1>
+            <p>Na Estética Su Rabelo, cuidamos da sua beleza com técnicas avançadas e produtos de alta qualidade.
+                Descubra o melhor de você com nossos tratamentos especializados.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn"><i class="fas fa-calendar-alt"></i> Agendar Consulta</a>
+                <a href="#services" class="btn btn-secondary"><i class="fas fa-spa"></i> Conhecer Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos tratamentos estéticos personalizados para atender suas necessidades com excelência e
+                    cuidado</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img-container">
+                        <img src="https://image.tuasaude.com/media/article/is/ux/como-fazer-uma-limpeza-de-pele-profunda_40740.jpg?width=686&height=487"
+                            alt="Limpeza de Pele" class="service-img">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3>Limpeza de Pele Profunda</h3>
+                        <p>Tratamento completo para remoção de impurezas, cravos e células mortas, deixando a pele
+                            renovada e revitalizada. Utilizamos produtos de alta qualidade para um resultado visível
+                            imediato.</p>
+                        <a href="#booking" class="btn">Agendar</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-container">
+                        <img src="https://www.troisbeaute.com.br/wp-content/uploads/2020/07/istock-1180649860-1024x683.jpg"
+                            alt="Design de Sobrancelhas" class="service-img">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Design de Sobrancelhas</h3>
+                        <p>Realçamos a expressão do seu rosto com técnicas precisas de design e henna para um visual
+                            natural e harmonioso. Valorizamos sua beleza única com acabamento perfeito.</p>
+                        <a href="#booking" class="btn">Agendar</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-container">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Massagem Relaxante" class="service-img">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <h3>Massagem Relaxante</h3>
+                        <p>Alívio do estresse e tensões musculares com óleos essenciais que promovem bem-estar e
+                            relaxamento profundo. Uma experiência revitalizante para corpo e mente.</p>
+                        <a href="#booking" class="btn">Agendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combos -->
+    <section class="combos" id="combos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Combos Exclusivos</h2>
+                <p>Pacotes especiais para você economizar e cuidar da sua beleza de forma completa</p>
+            </div>
+
+            <div class="combos-grid">
+                <div class="combo-card">
+                    <div class="combo-badge">Mais Popular</div>
+                    <div class="combo-img-container">
+                        <img src="https://png.pngtree.com/thumb_back/fw800/background/20250926/pngtree-bright-pink-sale-tag-with-bold-text-and-discount-offer-on-image_19621914.webp"
+                            alt="Combo Beleza Total" class="combo-img">
+                    </div>
+                    <div class="combo-content">
+                        <h3>Combo Beleza Total</h3>
+                        <p>Limpeza de pele + design de sobrancelhas + hidratação facial</p>
+
+                        <ul class="combo-features">
+                            <li><i class="fas fa-check"></i> Limpeza profunda com extração</li>
+                            <li><i class="fas fa-check"></i> Design personalizado de sobrancelhas</li>
+                            <li><i class="fas fa-check"></i> Hidratação facial intensiva</li>
+                            <li><i class="fas fa-check"></i> Produtos premium inclusos</li>
+                            <li><i class="fas fa-check"></i> Duração: 2h30min</li>
+                        </ul>
+
+                        <a href="#booking" class="btn">Agendar Combo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossos procedimentos e agendamentos</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais são as formas de pagamento aceitas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceitamos cartões de crédito (todas as bandeiras), débito, Pix e transferência bancária. Para
+                            agendamentos online, o pagamento pode ser realizado via Pix ou cartão. Oferecemos também
+                            parcelamento em até 3x sem juros.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>É necessário fazer agendamento prévio?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, todos os atendimentos são realizados mediante agendamento. Isso nos permite dedicar o
+                            tempo necessário a cada cliente e manter o padrão de qualidade que oferecemos. Você pode
+                            agendar através do nosso site, WhatsApp ou telefone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Com quanta antecedência devo chegar para minha sessão?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Recomendamos que chegue com 10-15 minutos de antecedência para preenchimento de ficha
+                            cadastral, avaliação inicial e para que possamos iniciar seu atendimento no horário
+                            agendado, garantindo que você aproveite todo o tempo do seu tratamento.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Qual a política de cancelamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cancelamentos devem ser feitos com até 24 horas de antecedência. Cancelamentos em menor prazo
+                            estão sujeitos a multa de 50% do valor do serviço. Remarcações podem ser feitas sem custo
+                            adicional com 12 horas de antecedência.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Os produtos utilizados são hipoalergênicos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, todos os produtos utilizados em nossos tratamentos são de alta qualidade, testados
+                            dermatologicamente e adequados para peles sensíveis. Antes de cada procedimento, realizamos
+                            teste de sensibilidade para garantir sua segurança e conforto durante todo o tratamento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Agende seu Horário</h2>
+                <p>Preencha o formulário abaixo e entraremos em contato para confirmar seu agendamento</p>
+            </div>
+
+            <form class="booking-form" id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" class="form-control" required placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="(00) 00000-0000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="seuemail@exemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Data Desejada *</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Serviço de Interesse *</label>
+                    <select id="service" class="form-control" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="limpeza">Limpeza de Pele Profunda</option>
+                        <option value="sobrancelhas">Design de Sobrancelhas</option>
+                        <option value="massagem">Massagem Relaxante</option>
+                        <option value="combo-beleza">Combo Beleza Total</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem Adicional</label>
+                    <textarea id="message" class="form-control" rows="4"
+                        placeholder="Alguma observação, preferência específica ou dúvida?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> Solicitar Agendamento
+                </button>
+                <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt"></i> Seus dados estão seguros conosco
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 50px; height: 50px; margin-right: 15px;">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        Estética<span>Su Rabelo</span>
+                    </div>
+                    <p>Especializada em tratamentos estéticos personalizados, a Estética Su Rabelo busca realçar a
+                        beleza natural de cada cliente com técnicas avançadas e atendimento exclusivo.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/esteticistasurabelo" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5515996320305" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="#combos"><i class="fas fa-chevron-right"></i> Combos</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Trabalhos</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#booking"><i class="fas fa-chevron-right"></i> Agendamento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Sua especialista que une cuidado, resultado e juventude
+                        📍Itapeva-SP</p>
+                    <p><i class="fas fa-phone"></i> (15) 99632-0305</p>
+                    <p><i class="fas fa-envelope"></i> @esteticistasurabelo</p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 9h-19h | Sáb: 9h-14h</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Estética Su Rabelo. Todos os direitos reservados. | Desenvolvido por <a
+                        href="#">G-Company</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form Submission
+        const bookingForm = document.getElementById('bookingForm');
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const serviceText = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+
+            // In a real scenario, you would send this data to a server
+            // For this example, we'll show a nice confirmation message
+            const successMessage = document.createElement('div');
+            successMessage.innerHTML = `
+                <div style="background: linear-gradient(135deg, #d4af9a 0%, #c49a6c 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-top: 20px;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; margin-bottom: 10px;">Agendamento Solicitado!</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Obrigada, <strong>${name}</strong>! Sua solicitação para <strong>${serviceText}</strong> foi recebida com sucesso.</p>
+                    <p style="color: rgba(255,255,255,0.9);">Entraremos em contato em breve para confirmar seu agendamento.</p>
+                    <button onclick="this.parentElement.remove()" style="background: white; color: #8a6a5c; border: none; padding: 10px 20px; border-radius: 50px; margin-top: 15px; cursor: pointer; font-weight: 600;">OK</button>
+                </div>
+            `;
+
+            // Insert after form
+            bookingForm.parentNode.insertBefore(successMessage, bookingForm.nextSibling);
+
+            // Reset form
+            bookingForm.reset();
+
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Set minimum date for booking to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+        document.getElementById('date').value = tomorrowFormatted;
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements when scrolling
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .combo-card, .faq-item, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
